@@ -1,0 +1,22 @@
+[mysql]
+username: user
+password: pass
+host: localhost
+port: 3306
+
+[s3]
+aws_key: aws access key
+aws_secret: aws secret key
+bucket_name: s3_bucket_name
+prefix: s3_target_folder_name/ #example (slash is mandatory): server_backup/
+
+# for temp files
+# self - cleaned after each run
+# make sure there is enough space there
+[environment]
+work dir: /path/to/work/dir
+
+[dirs to backup]
+dirname_1: dirpath
+dirname_2: dirpath
+dirname_3: dirpath
