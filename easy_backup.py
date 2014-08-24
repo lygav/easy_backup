@@ -1,9 +1,3 @@
-# Allows to backup all databases vs all tables (visible for that database user)
-# and important direcotries
-# script written for python 2.7 
-# for python 2.6 - need to remove RawCongifParser allow_no_value argument
-# and gzipfile won't work with the 'with' keyword so change it to be closed manually gz_file.close()
-
 import gzip
 import os
 import re
