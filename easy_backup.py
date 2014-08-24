@@ -40,7 +40,7 @@ def backup_mysql(username, password, host, port):
         for database in matches[1:]:
             print 'Dumping %s' % database
             try:
-                os.system("/usr/bin/mysqldump -u %s -p%s -h %s -P %d --opt --databases %s > %s" % (username, password, host, port, database, mysql_backup_file_path))
+                os.system("/usr/bin/mysqldump -u %s -p%s -h %s -P %d --add-drop-database --opt --databases %s > %s" % (username, password, host, port, database, mysql_backup_file_path))
                 __compress_file(mysql_backup_file_path)
                 os.unlink(mysql_backup_file_path)
             except Exception as e:
