@@ -12,6 +12,7 @@ import subprocess
 config = ConfigParser.ConfigParser()
 config.read('config.ini')
 
+
 def establish_working_dir(dirpath):
     if not os.path.exists(dirpath):
         os.makedirs(dirpath, mode=0777)
@@ -35,7 +36,7 @@ def backup_mysql(username, password, host, port):
     print 'Backing up mysql databases...'
     mysql_backup_file_path = __get_mysql_backup_file_name()
     if 'win' not in sys.platform:
-        res = subprocess.Popen(['mysql', '-e', 'show databases'], stdout=subprocess.PIPE).communicate()[0]
+        res = subprocess.Popen(['mysql', '-u'+username, '-p'+password, '-e', 'show databases'], stdout=subprocess.PIPE).communicate()[0]
         matches = re.findall(".+", res)
         for database in matches[1:]:
             print 'Dumping %s' % database
