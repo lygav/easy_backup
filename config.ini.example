@@ -3,19 +3,25 @@ username: user
 password: pass
 host: localhost
 port: 3306
+file_per_database: true
 
+# paste all values as simple strings
+# without quotes
 [s3]
 aws_key: aws access key
 aws_secret: aws secret key
 bucket_name: s3_bucket_name
 prefix: s3_target_folder_name/ #example (slash is mandatory): server_backup/
 
-# for temp files
-# self - cleaned after each run
+# used for temp files and
+# is cleaned after each run
 # make sure there is enough space there
 [environment]
 work dir: /path/to/work/dir
 
+# may leave empty
+# just leave the category name
+# and comment/delete the directory entries
 [dirs to backup]
 dirname_1: dirpath
 dirname_2: dirpath
